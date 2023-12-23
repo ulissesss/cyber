@@ -13,13 +13,14 @@ array=($(seq 1 $n))
 for i in "${array[@]}"; do
        #echo "john --wordlist=$wordlist --format=crypt $i"
        john --wordlist=$wordlist --format=crypt $i > /dev/null 2>&1 &
-       wait
 done
-
+wait
 #echo "Command completed"
 #Show the cracked passwords
 
 for i in "${array[@]}"; do
-    john -show $i
+    john -show $i > password_cracked.txt
 done
-
+for i in "${array[@]}"; do
+    rm -rf $i
+done
