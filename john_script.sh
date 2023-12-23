@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#How to run ./john_scripts.sh <hash_file> &
 #Take in input a shadow file
 input="$1"
 #From the shadow file takes only the users and hash passwords
